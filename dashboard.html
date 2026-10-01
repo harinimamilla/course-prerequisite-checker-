@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CoursePath | Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='dashboard.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            CP
+        </div>
+
+        <div>
+            <h2>CoursePath</h2>
+            <span>Academic Analyzer</span>
+        </div>
+
+    </div>
+
+
+    <div class="menu-title">
+        MAIN MENU
+    </div>
+
+
+    <nav>
+
+        <a href="/" class="nav-item active">
+
+            <span class="nav-icon">⌂</span>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="/checker" class="nav-item">
+
+            <span class="nav-icon">⌕</span>
+
+            <span>Course Checker</span>
+
+        </a>
+
+
+        <a href="/courses" class="nav-item">
+
+            <span class="nav-icon">▦</span>
+
+            <span>Course Explorer</span>
+
+        </a>
+
+
+        <a href="/graph" class="nav-item">
+
+            <span class="nav-icon">⌘</span>
+
+            <span>Directed Graph</span>
+
+        </a>
+
+
+        <div class="menu-title second">
+            INFORMATION
+        </div>
+
+
+        <a href="/about" class="nav-item">
+
+            <span class="nav-icon">ⓘ</span>
+
+            <span>About Project</span>
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="online-dot"></div>
+
+        <div>
+
+            <strong>System Online</strong>
+
+            <span>CoursePath v1.0</span>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <span class="page-label">
+                OVERVIEW
+            </span>
+
+            <h1>
+                Dashboard
+            </h1>
+
+        </div>
+
+
+        <div class="top-status">
+
+            <span class="status-dot"></span>
+
+            Directed Graph System
+
+        </div>
+
+    </header>
+
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome-card">
+
+        <div>
+
+            <span class="welcome-label">
+                WELCOME TO COURSEPATH
+            </span>
+
+            <h2>
+                Plan your courses<br>
+                <span>with confidence.</span>
+            </h2>
+
+            <p>
+                Analyse prerequisite relationships and
+                discover whether you are ready for your
+                next course.
+            </p>
+
+
+            <a href="/checker"
+               class="start-button">
+
+                Start Course Check
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+
+        <div class="welcome-visual">
+
+            <div class="circle circle-one"></div>
+
+            <div class="circle circle-two"></div>
+
+            <div class="floating-node node-one">
+                Programming
+            </div>
+
+            <div class="floating-node node-two">
+                Data Structures
+            </div>
+
+            <div class="floating-node node-three">
+                Algorithms
+            </div>
+
+            <div class="floating-arrow arrow-one">
+                →
+            </div>
+
+            <div class="floating-arrow arrow-two">
+                →
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STAT CARDS -->
+
+    <section class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                📚
+            </div>
+
+            <div>
+
+                <span>Total Courses</span>
+
+                <strong>
+                    {{ courses|length }}
+                </strong>
+
+                <small>
+                    Available in system
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">
+                ◈
+            </div>
+
+            <div>
+
+                <span>Graph Nodes</span>
+
+                <strong>
+                    {{ courses|length }}
+                </strong>
+
+                <small>
+                    Courses as nodes
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                ↗
+            </div>
+
+            <div>
+
+                <span>Relationships</span>
+
+                <strong>
+                    9
+                </strong>
+
+                <small>
+                    Directed connections
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                ✓
+            </div>
+
+            <div>
+
+                <span>System Status</span>
+
+                <strong class="active-text">
+                    ACTIVE
+                </strong>
+
+                <small>
+                    Flask backend online
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- QUICK ACCESS -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    QUICK ACCESS
+                </span>
+
+                <h2>
+                    Explore CoursePath
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+
+            <a href="/checker"
+               class="quick-card">
+
+                <div class="quick-icon">
+                    🔍
+                </div>
+
+                <div>
+
+                    <h3>
+                        Course Checker
+                    </h3>
+
+                    <p>
+                        Check whether you are eligible
+                        for your selected course.
+                    </p>
+
+                </div>
+
+                <strong>→</strong>
+
+            </a>
+
+
+            <a href="/courses"
+               class="quick-card">
+
+                <div class="quick-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <h3>
+                        Course Explorer
+                    </h3>
+
+                    <p>
+                        Explore all courses and their
+                        prerequisite information.
+                    </p>
+
+                </div>
+
+                <strong>→</strong>
+
+            </a>
+
+
+            <a href="/graph"
+               class="quick-card">
+
+                <div class="quick-icon">
+                    🔗
+                </div>
+
+                <div>
+
+                    <h3>
+                        Directed Graph
+                    </h3>
+
+                    <p>
+                        Visualise relationships between
+                        different courses.
+                    </p>
+
+                </div>
+
+                <strong>→</strong>
+
+            </a>
+
+
+            <a href="/about"
+               class="quick-card">
+
+                <div class="quick-icon">
+                    💡
+                </div>
+
+                <div>
+
+                    <h3>
+                        About Project
+                    </h3>
+
+                    <p>
+                        Learn about the technology,
+                        objective and working.
+                    </p>
+
+                </div>
+
+                <strong>→</strong>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROJECT CONCEPT -->
+
+    <section class="concept-card">
+
+        <div>
+
+            <span class="concept-label">
+                PROJECT CONCEPT
+            </span>
+
+            <h2>
+                How CoursePath works
+            </h2>
+
+            <p>
+                CoursePath represents courses as nodes in
+                a directed graph. An arrow from one course
+                to another represents a prerequisite
+                relationship.
+            </p>
+
+        </div>
+
+
+        <div class="concept-flow">
+
+            <div>
+                <b>Course</b>
+                <span>Node</span>
+            </div>
+
+            <strong>→</strong>
+
+            <div>
+                <b>Prerequisite</b>
+                <span>Relationship</span>
+            </div>
+
+            <strong>→</strong>
+
+            <div>
+                <b>Eligibility</b>
+                <span>Result</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            <strong>CoursePath</strong>
+            <span>
+                | Directed Graph Prerequisite System
+            </span>
+        </div>
+
+        <span>
+            Full-Stack Academic Project
+        </span>
+
+    </footer>
+
+
+</main>
+
+</body>
+
+</html>

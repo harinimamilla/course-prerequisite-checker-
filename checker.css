@@ -1,0 +1,411 @@
+/* ==========================================
+   COURSE CHECKER PAGE
+   ========================================== */
+
+.checker-intro {
+    background: linear-gradient(135deg, #0a1f3b, #164c80);
+    border-radius: 20px;
+    padding: 32px 38px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    box-shadow: 0 15px 35px rgba(20, 55, 95, 0.14);
+}
+
+.intro-label {
+    color: #83c4ff;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.checker-intro h2 {
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.checker-intro h2 span {
+    color: #71baff;
+}
+
+.checker-intro p {
+    color: #c1d3e6;
+    font-size: 12px;
+    max-width: 650px;
+}
+
+.intro-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+
+/* ==========================================
+   CHECKER LAYOUT
+   ========================================== */
+
+.checker-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 20px;
+}
+
+.checker-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 27px;
+    box-shadow: 0 8px 25px rgba(30,55,90,0.05);
+}
+
+.box-heading {
+    margin-bottom: 25px;
+}
+
+.step-label {
+    color: var(--blue);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.box-heading h2 {
+    font-size: 21px;
+    margin: 5px 0;
+}
+
+.box-heading p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   SELECT
+   ========================================== */
+
+.field-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.course-select {
+    position: relative;
+}
+
+.course-select select {
+    width: 100%;
+    padding: 14px 40px 14px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fafbfd;
+    color: var(--text);
+    font-size: 12px;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.course-select select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(54,123,211,0.1);
+}
+
+.course-select > span {
+    position: absolute;
+    right: 14px;
+    top: 9px;
+    font-size: 20px;
+    color: var(--muted);
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   REQUIRED PREREQUISITES
+   ========================================== */
+
+.required-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #f1f7ff;
+    border: 1px solid #d6e8fb;
+}
+
+.required-box.hidden {
+    display: none;
+}
+
+.required-title {
+    color: #245d9c;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 9px;
+}
+
+.prerequisite-item {
+    background: white;
+    border: 1px solid #dce8f5;
+    border-radius: 8px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    color: #35465a;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.prerequisite-item span {
+    color: var(--blue);
+    font-weight: 900;
+    margin-right: 6px;
+}
+
+
+/* ==========================================
+   COMPLETED COURSES
+   ========================================== */
+
+.completed-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.completed-top > span {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.completed-top strong {
+    background: var(--blue-light);
+    color: var(--blue);
+    padding: 6px 9px;
+    border-radius: 20px;
+    font-size: 9px;
+}
+
+.completed-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.completed-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.completed-item:hover {
+    border-color: #9dbfe4;
+    background: #f8fbff;
+}
+
+.completed-item input {
+    display: none;
+}
+
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cbd4df;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.completed-item input:checked + .custom-checkbox {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.completed-item:has(input:checked) {
+    border-color: #91b8e5;
+    background: #f1f7ff;
+}
+
+
+/* ==========================================
+   ANALYSE BUTTON
+   ========================================== */
+
+.analyse-section {
+    margin: 20px 0;
+}
+
+.analyse-button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #123762, #3278c9);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(35,91,157,.2);
+    transition: .25s ease;
+}
+
+.analyse-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(35,91,157,.28);
+}
+
+.analyse-button strong {
+    font-size: 21px;
+}
+
+
+/* ==========================================
+   RESULT
+   ========================================== */
+
+#result {
+    display: none;
+    padding: 18px;
+    border-radius: 13px;
+    margin-bottom: 25px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+#result.success,
+#result.error {
+    display: block;
+}
+
+#result.success {
+    color: #126342;
+    background: #eaf8f1;
+    border: 1px solid #b8e5cf;
+}
+
+#result.error {
+    color: #a02e40;
+    background: #fff0f2;
+    border: 1px solid #efc1ca;
+}
+
+
+/* ==========================================
+   HOW IT WORKS
+   ========================================== */
+
+.how-section {
+    margin: 35px 0;
+}
+
+.how-heading {
+    margin-bottom: 17px;
+}
+
+.how-heading h2 {
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.process-grid {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.process-card {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+}
+
+.process-number {
+    color: var(--blue);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.process-card h3 {
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.process-card p {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.process-arrow {
+    color: #9bb8d7;
+    font-size: 20px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .checker-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .checker-intro {
+        padding: 27px;
+    }
+
+    .intro-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .completed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        flex-direction: column;
+    }
+
+    .process-arrow {
+        transform: rotate(90deg);
+    }
+
+    .checker-intro h2 {
+        font-size: 25px;
+    }
+}
